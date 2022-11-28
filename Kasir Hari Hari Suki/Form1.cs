@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Kasir_Hari_Hari_Suki
 {
@@ -17,6 +18,13 @@ namespace Kasir_Hari_Hari_Suki
             InitializeComponent();
         }
 
+        public static string sqlConnection = "server=139.255.11.84;uid=student;pwd=isbmantap;database=SAD_HariHariSuki";
+        public MySqlConnection sqlConnect = new MySqlConnection(sqlConnection); // sbg data koneksi ke DBMSnya
+        public MySqlCommand sqlCommand; // memindahkan query
+        public MySqlDataAdapter sqlAdapter; // penampung data
+        public MySqlDataReader sqlDataReader;
+        public string sqlQuery;
+
         private void FormLogin_Load(object sender, EventArgs e)
         {
             
@@ -24,13 +32,21 @@ namespace Kasir_Hari_Hari_Suki
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            if (textBoxUsername.Text == "nama" && textBoxPassword.Text == "staff")
+            this.Hide();
+            DataTable dtStaff = new DataTable();
+            sqlQuery = "select NAMA_STAFF from STAFF where NAMA_STAFF = '"+textBoxUsername.Text+"' and PASS_STAFF = '"+textBoxPassword.Text+"';";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtStaff);
+
+            if (dtStaff.Rows.Count > 0)
             {
-                FormKasir formkasir = new FormKasir();
-                this.Hide();
-                formkasir.ShowDialog();
+                FormKasir formKasir = new FormKasir();
             }
-            
+            else if (dtStaff.Rows.Count == 0)
+            {
+
+            }
         }
     }
 }

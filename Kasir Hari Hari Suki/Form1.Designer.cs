@@ -40,9 +40,10 @@ namespace Kasir_Hari_Hari_Suki
             this.buttonLogin.BackColor = System.Drawing.Color.Gray;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonLogin.Location = new System.Drawing.Point(560, 468);
+            this.buttonLogin.Location = new System.Drawing.Point(420, 380);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(148, 37);
+            this.buttonLogin.Size = new System.Drawing.Size(111, 30);
             this.buttonLogin.TabIndex = 0;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -51,9 +52,10 @@ namespace Kasir_Hari_Hari_Suki
             // textBoxUsername
             // 
             this.textBoxUsername.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxUsername.Location = new System.Drawing.Point(502, 278);
+            this.textBoxUsername.Location = new System.Drawing.Point(376, 226);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(263, 22);
+            this.textBoxUsername.Size = new System.Drawing.Size(198, 20);
             this.textBoxUsername.TabIndex = 1;
             this.textBoxUsername.Tag = "";
             this.textBoxUsername.Text = "Username";
@@ -62,25 +64,27 @@ namespace Kasir_Hari_Hari_Suki
             // textBoxPassword
             // 
             this.textBoxPassword.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxPassword.Location = new System.Drawing.Point(502, 352);
+            this.textBoxPassword.Location = new System.Drawing.Point(376, 286);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(263, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(198, 20);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.Text = "Password";
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.ClientSize = new System.Drawing.Size(946, 547);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.buttonLogin);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Login";
