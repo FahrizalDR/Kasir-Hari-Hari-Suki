@@ -41,7 +41,7 @@ namespace Kasir_Hari_Hari_Suki
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.buttonLogin.Location = new System.Drawing.Point(420, 380);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(111, 30);
             this.buttonLogin.TabIndex = 0;
@@ -53,24 +53,26 @@ namespace Kasir_Hari_Hari_Suki
             // 
             this.textBoxUsername.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxUsername.Location = new System.Drawing.Point(376, 226);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(198, 20);
             this.textBoxUsername.TabIndex = 1;
             this.textBoxUsername.Tag = "";
             this.textBoxUsername.Text = "Username";
             this.textBoxUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxUsername.Click += new System.EventHandler(this.textBoxUsername_Click);
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxPassword.Location = new System.Drawing.Point(376, 286);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(198, 20);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.Text = "Password";
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
             // 
             // FormLogin
             // 
@@ -84,7 +86,7 @@ namespace Kasir_Hari_Hari_Suki
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.buttonLogin);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Login";

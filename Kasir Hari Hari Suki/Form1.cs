@@ -42,11 +42,25 @@ namespace Kasir_Hari_Hari_Suki
             if (dtStaff.Rows.Count > 0)
             {
                 FormKasir formKasir = new FormKasir();
+                formKasir.Show();
             }
             else if (dtStaff.Rows.Count == 0)
             {
-
+                string message = "Password Anda Salah!";
+                MessageBox.Show(message);
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
             }
+        }
+
+        private void textBoxUsername_Click(object sender, EventArgs e)
+        {
+            textBoxUsername.Text = "";
+        }
+
+        private void textBoxPassword_Click(object sender, EventArgs e)
+        {
+            textBoxPassword.Text = "";
         }
     }
 }
