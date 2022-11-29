@@ -47,6 +47,9 @@ namespace Kasir_Hari_Hari_Suki
             else if (dtStaff.Rows.Count == 0)
             {
                 labelPasswordSalah.Text = "Password Anda Salah!";
+                textBoxUsername.Text = "Username";
+                textBoxPassword.Text = "Password";
+                textBoxPassword.PasswordChar = '\0';
             }
         }
 
@@ -58,6 +61,11 @@ namespace Kasir_Hari_Hari_Suki
         private void textBoxPassword_Click(object sender, EventArgs e)
         {
             textBoxPassword.Text = "";
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+            textBoxPassword.PasswordChar = '*';
         }
     }
 }

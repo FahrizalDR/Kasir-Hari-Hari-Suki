@@ -81,7 +81,7 @@ namespace Kasir_Hari_Hari_Suki
             this.RBTable1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBTable1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RBTable1.Location = new System.Drawing.Point(537, 380);
-            this.RBTable1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBTable1.Margin = new System.Windows.Forms.Padding(2);
             this.RBTable1.Name = "RBTable1";
             this.RBTable1.Size = new System.Drawing.Size(79, 24);
             this.RBTable1.TabIndex = 1;
@@ -96,7 +96,7 @@ namespace Kasir_Hari_Hari_Suki
             this.RBTable5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBTable5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RBTable5.Location = new System.Drawing.Point(537, 409);
-            this.RBTable5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBTable5.Margin = new System.Windows.Forms.Padding(2);
             this.RBTable5.Name = "RBTable5";
             this.RBTable5.Size = new System.Drawing.Size(79, 24);
             this.RBTable5.TabIndex = 2;
@@ -111,7 +111,7 @@ namespace Kasir_Hari_Hari_Suki
             this.RBTable2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBTable2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RBTable2.Location = new System.Drawing.Point(633, 380);
-            this.RBTable2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBTable2.Margin = new System.Windows.Forms.Padding(2);
             this.RBTable2.Name = "RBTable2";
             this.RBTable2.Size = new System.Drawing.Size(79, 24);
             this.RBTable2.TabIndex = 1;
@@ -126,7 +126,7 @@ namespace Kasir_Hari_Hari_Suki
             this.RBTable6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBTable6.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RBTable6.Location = new System.Drawing.Point(633, 409);
-            this.RBTable6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBTable6.Margin = new System.Windows.Forms.Padding(2);
             this.RBTable6.Name = "RBTable6";
             this.RBTable6.Size = new System.Drawing.Size(79, 24);
             this.RBTable6.TabIndex = 2;
@@ -141,7 +141,7 @@ namespace Kasir_Hari_Hari_Suki
             this.RBTable3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBTable3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RBTable3.Location = new System.Drawing.Point(729, 380);
-            this.RBTable3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBTable3.Margin = new System.Windows.Forms.Padding(2);
             this.RBTable3.Name = "RBTable3";
             this.RBTable3.Size = new System.Drawing.Size(79, 24);
             this.RBTable3.TabIndex = 1;
@@ -156,7 +156,7 @@ namespace Kasir_Hari_Hari_Suki
             this.RBTable7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBTable7.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RBTable7.Location = new System.Drawing.Point(729, 409);
-            this.RBTable7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBTable7.Margin = new System.Windows.Forms.Padding(2);
             this.RBTable7.Name = "RBTable7";
             this.RBTable7.Size = new System.Drawing.Size(79, 24);
             this.RBTable7.TabIndex = 2;
@@ -171,7 +171,7 @@ namespace Kasir_Hari_Hari_Suki
             this.RBTable4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBTable4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RBTable4.Location = new System.Drawing.Point(820, 380);
-            this.RBTable4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBTable4.Margin = new System.Windows.Forms.Padding(2);
             this.RBTable4.Name = "RBTable4";
             this.RBTable4.Size = new System.Drawing.Size(79, 24);
             this.RBTable4.TabIndex = 1;
@@ -186,7 +186,7 @@ namespace Kasir_Hari_Hari_Suki
             this.RBTable8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RBTable8.ForeColor = System.Drawing.SystemColors.ControlText;
             this.RBTable8.Location = new System.Drawing.Point(820, 409);
-            this.RBTable8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RBTable8.Margin = new System.Windows.Forms.Padding(2);
             this.RBTable8.Name = "RBTable8";
             this.RBTable8.Size = new System.Drawing.Size(79, 24);
             this.RBTable8.TabIndex = 2;
@@ -228,6 +228,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusTomYum.TabIndex = 5;
             this.btnPlusTomYum.Text = "+";
             this.btnPlusTomYum.UseVisualStyleBackColor = false;
+            this.btnPlusTomYum.Click += new System.EventHandler(this.btnPlusTomYum_Click);
             // 
             // btnMinTomYum
             // 
@@ -261,6 +262,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusOdeng.TabIndex = 8;
             this.btnPlusOdeng.Text = "+";
             this.btnPlusOdeng.UseVisualStyleBackColor = false;
+            this.btnPlusOdeng.Click += new System.EventHandler(this.btnPlusOdeng_Click);
             // 
             // btnMinSuki
             // 
@@ -283,6 +285,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusSuki.TabIndex = 10;
             this.btnPlusSuki.Text = "+";
             this.btnPlusSuki.UseVisualStyleBackColor = false;
+            this.btnPlusSuki.Click += new System.EventHandler(this.btnPlusSuki_Click);
             // 
             // btnMinNasi
             // 
@@ -305,6 +308,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusNasi.TabIndex = 12;
             this.btnPlusNasi.Text = "+";
             this.btnPlusNasi.UseVisualStyleBackColor = false;
+            this.btnPlusNasi.Click += new System.EventHandler(this.btnPlusNasi_Click);
             // 
             // btnMinTopokki
             // 
@@ -327,6 +331,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusTopokki.TabIndex = 14;
             this.btnPlusTopokki.Text = "+";
             this.btnPlusTopokki.UseVisualStyleBackColor = false;
+            this.btnPlusTopokki.Click += new System.EventHandler(this.btnPlusTopokki_Click);
             // 
             // btnMinEsTeh
             // 
@@ -349,6 +354,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusEsTeh.TabIndex = 16;
             this.btnPlusEsTeh.Text = "+";
             this.btnPlusEsTeh.UseVisualStyleBackColor = false;
+            this.btnPlusEsTeh.Click += new System.EventHandler(this.btnPlusEsTeh_Click);
             // 
             // btnMinTehPanas
             // 
@@ -371,6 +377,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusTehPanas.TabIndex = 18;
             this.btnPlusTehPanas.Text = "+";
             this.btnPlusTehPanas.UseVisualStyleBackColor = false;
+            this.btnPlusTehPanas.Click += new System.EventHandler(this.btnPlusTehPanas_Click);
             // 
             // btnMinKopi
             // 
@@ -393,6 +400,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusKopi.TabIndex = 20;
             this.btnPlusKopi.Text = "+";
             this.btnPlusKopi.UseVisualStyleBackColor = false;
+            this.btnPlusKopi.Click += new System.EventHandler(this.btnPlusKopi_Click);
             // 
             // btnMinEsKopi
             // 
@@ -415,6 +423,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusEsKopi.TabIndex = 22;
             this.btnPlusEsKopi.Text = "+";
             this.btnPlusEsKopi.UseVisualStyleBackColor = false;
+            this.btnPlusEsKopi.Click += new System.EventHandler(this.btnPlusEsKopi_Click);
             // 
             // btnMinFanta
             // 
@@ -437,6 +446,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusFanta.TabIndex = 24;
             this.btnPlusFanta.Text = "+";
             this.btnPlusFanta.UseVisualStyleBackColor = false;
+            this.btnPlusFanta.Click += new System.EventHandler(this.btnPlusFanta_Click);
             // 
             // btnMinCola
             // 
@@ -459,6 +469,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusCola.TabIndex = 26;
             this.btnPlusCola.Text = "+";
             this.btnPlusCola.UseVisualStyleBackColor = false;
+            this.btnPlusCola.Click += new System.EventHandler(this.btnPlusCola_Click);
             // 
             // btnMinAir
             // 
@@ -481,6 +492,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusAir.TabIndex = 28;
             this.btnPlusAir.Text = "+";
             this.btnPlusAir.UseVisualStyleBackColor = false;
+            this.btnPlusAir.Click += new System.EventHandler(this.btnPlusAir_Click);
             // 
             // btnMinSprite
             // 
@@ -503,6 +515,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPlusSprite.TabIndex = 30;
             this.btnPlusSprite.Text = "+";
             this.btnPlusSprite.UseVisualStyleBackColor = false;
+            this.btnPlusSprite.Click += new System.EventHandler(this.btnPlusSprite_Click);
             // 
             // brnRecap
             // 
@@ -607,7 +620,7 @@ namespace Kasir_Hari_Hari_Suki
             this.Controls.Add(this.RBTable5);
             this.Controls.Add(this.RBTable1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormKasir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Home";

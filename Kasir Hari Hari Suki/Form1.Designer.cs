@@ -74,6 +74,7 @@ namespace Kasir_Hari_Hari_Suki
             this.textBoxPassword.Text = "Password";
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // labelPasswordSalah
             // 
