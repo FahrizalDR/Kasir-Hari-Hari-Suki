@@ -27,12 +27,11 @@ namespace Kasir_Hari_Hari_Suki
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            
+            labelPasswordSalah.Text = "";
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
             DataTable dtStaff = new DataTable();
             sqlQuery = "select NAMA_STAFF from STAFF where NAMA_STAFF = '"+textBoxUsername.Text+"' and PASS_STAFF = '"+textBoxPassword.Text+"';";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
@@ -41,15 +40,13 @@ namespace Kasir_Hari_Hari_Suki
 
             if (dtStaff.Rows.Count > 0)
             {
+                this.Hide();
                 FormKasir formKasir = new FormKasir();
                 formKasir.Show();
             }
             else if (dtStaff.Rows.Count == 0)
             {
-                string message = "Password Anda Salah!";
-                MessageBox.Show(message);
-                FormLogin formLogin = new FormLogin();
-                formLogin.Show();
+                labelPasswordSalah.Text = "Password Anda Salah!";
             }
         }
 

@@ -33,6 +33,7 @@ namespace Kasir_Hari_Hari_Suki
             this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.labelPasswordSalah = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -74,6 +75,17 @@ namespace Kasir_Hari_Hari_Suki
             this.textBoxPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
             // 
+            // labelPasswordSalah
+            // 
+            this.labelPasswordSalah.AutoSize = true;
+            this.labelPasswordSalah.BackColor = System.Drawing.Color.Gainsboro;
+            this.labelPasswordSalah.ForeColor = System.Drawing.Color.Red;
+            this.labelPasswordSalah.Location = new System.Drawing.Point(376, 326);
+            this.labelPasswordSalah.Name = "labelPasswordSalah";
+            this.labelPasswordSalah.Size = new System.Drawing.Size(35, 13);
+            this.labelPasswordSalah.TabIndex = 3;
+            this.labelPasswordSalah.Text = "label1";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -82,6 +94,7 @@ namespace Kasir_Hari_Hari_Suki
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(946, 547);
+            this.Controls.Add(this.labelPasswordSalah);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.buttonLogin);
@@ -101,6 +114,7 @@ namespace Kasir_Hari_Hari_Suki
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Label labelPasswordSalah;
     }
 }
 
