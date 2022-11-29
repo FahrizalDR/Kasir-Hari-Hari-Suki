@@ -21,5 +21,12 @@ namespace Kasir_Hari_Hari_Suki
         {
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+        }
     }
 }
