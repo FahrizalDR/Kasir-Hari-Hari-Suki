@@ -240,6 +240,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinTomYum.TabIndex = 7;
             this.btnMinTomYum.Text = "-";
             this.btnMinTomYum.UseVisualStyleBackColor = false;
+            this.btnMinTomYum.Click += new System.EventHandler(this.btnMinTomYum_Click);
             // 
             // btnMinOdeng
             // 
@@ -251,6 +252,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinOdeng.TabIndex = 9;
             this.btnMinOdeng.Text = "-";
             this.btnMinOdeng.UseVisualStyleBackColor = false;
+            this.btnMinOdeng.Click += new System.EventHandler(this.btnMinOdeng_Click);
             // 
             // btnPlusOdeng
             // 
@@ -274,6 +276,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinSuki.TabIndex = 11;
             this.btnMinSuki.Text = "-";
             this.btnMinSuki.UseVisualStyleBackColor = false;
+            this.btnMinSuki.Click += new System.EventHandler(this.btnMinSuki_Click);
             // 
             // btnPlusSuki
             // 
@@ -297,6 +300,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinNasi.TabIndex = 13;
             this.btnMinNasi.Text = "-";
             this.btnMinNasi.UseVisualStyleBackColor = false;
+            this.btnMinNasi.Click += new System.EventHandler(this.btnMinNasi_Click);
             // 
             // btnPlusNasi
             // 
@@ -320,6 +324,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinTopokki.TabIndex = 15;
             this.btnMinTopokki.Text = "-";
             this.btnMinTopokki.UseVisualStyleBackColor = false;
+            this.btnMinTopokki.Click += new System.EventHandler(this.btnMinTopokki_Click);
             // 
             // btnPlusTopokki
             // 
@@ -343,6 +348,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinEsTeh.TabIndex = 17;
             this.btnMinEsTeh.Text = "-";
             this.btnMinEsTeh.UseVisualStyleBackColor = false;
+            this.btnMinEsTeh.Click += new System.EventHandler(this.btnMinEsTeh_Click);
             // 
             // btnPlusEsTeh
             // 
@@ -366,6 +372,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinTehPanas.TabIndex = 19;
             this.btnMinTehPanas.Text = "-";
             this.btnMinTehPanas.UseVisualStyleBackColor = false;
+            this.btnMinTehPanas.Click += new System.EventHandler(this.btnMinTehPanas_Click);
             // 
             // btnPlusTehPanas
             // 
@@ -389,6 +396,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinKopi.TabIndex = 21;
             this.btnMinKopi.Text = "-";
             this.btnMinKopi.UseVisualStyleBackColor = false;
+            this.btnMinKopi.Click += new System.EventHandler(this.btnMinKopi_Click);
             // 
             // btnPlusKopi
             // 
@@ -412,6 +420,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinEsKopi.TabIndex = 23;
             this.btnMinEsKopi.Text = "-";
             this.btnMinEsKopi.UseVisualStyleBackColor = false;
+            this.btnMinEsKopi.Click += new System.EventHandler(this.btnMinEsKopi_Click);
             // 
             // btnPlusEsKopi
             // 
@@ -435,6 +444,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinFanta.TabIndex = 25;
             this.btnMinFanta.Text = "-";
             this.btnMinFanta.UseVisualStyleBackColor = false;
+            this.btnMinFanta.Click += new System.EventHandler(this.btnMinFanta_Click);
             // 
             // btnPlusFanta
             // 
@@ -458,6 +468,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinCola.TabIndex = 27;
             this.btnMinCola.Text = "-";
             this.btnMinCola.UseVisualStyleBackColor = false;
+            this.btnMinCola.Click += new System.EventHandler(this.btnMinCola_Click);
             // 
             // btnPlusCola
             // 
@@ -481,6 +492,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinAir.TabIndex = 29;
             this.btnMinAir.Text = "-";
             this.btnMinAir.UseVisualStyleBackColor = false;
+            this.btnMinAir.Click += new System.EventHandler(this.btnMinAir_Click);
             // 
             // btnPlusAir
             // 
@@ -504,6 +516,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnMinSprite.TabIndex = 31;
             this.btnMinSprite.Text = "-";
             this.btnMinSprite.UseVisualStyleBackColor = false;
+            this.btnMinSprite.Click += new System.EventHandler(this.btnMinSprite_Click);
             // 
             // btnPlusSprite
             // 
@@ -538,6 +551,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnVoid.TabIndex = 33;
             this.btnVoid.Text = "Void";
             this.btnVoid.UseVisualStyleBackColor = false;
+            this.btnVoid.Click += new System.EventHandler(this.btnVoid_Click);
             // 
             // btnPrint
             // 

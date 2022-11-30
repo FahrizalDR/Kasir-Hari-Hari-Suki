@@ -576,5 +576,309 @@ namespace Kasir_Hari_Hari_Suki
                 }
             }
         }
+
+        private void btnMinTomYum_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Tom Yum")
+                {
+                    quantityTomYum = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityTomYum == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Tom Yum")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityTomYum - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinOdeng_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Odeng")
+                {
+                    quantityOdeng = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityOdeng == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Odeng")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityOdeng - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinSuki_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Suki")
+                {
+                    quantitySuki = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantitySuki == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Suki")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantitySuki - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinNasi_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Nasi")
+                {
+                    quantityNasi = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityNasi == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Nasi")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityNasi - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinTopokki_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Topokki")
+                {
+                    quantityTopokki = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityTopokki == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Topokki")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityTopokki - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinEsTeh_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Es Teh")
+                {
+                    quantityEsTeh = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityEsTeh == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Es Teh")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityEsTeh - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinTehPanas_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Teh Panas")
+                {
+                    quantityTehPanas = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityTehPanas == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Teh Panas")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityTehPanas - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinKopi_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Kopi")
+                {
+                    quantityKopi = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityKopi == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Kopi")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityKopi - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinEsKopi_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Es Kopi")
+                {
+                    quantityEsKopi = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityEsKopi == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Es Kopi")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityEsKopi - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinAir_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Air Mineral")
+                {
+                    quantityAir = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityAir == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Air Mineral")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityAir - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinCola_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Coca Cola")
+                {
+                    quantityCola = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityCola == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Coca Cola")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityCola - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinFanta_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Fanta")
+                {
+                    quantityFanta = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantityFanta == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Fanta")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantityFanta - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnMinSprite_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                if (dtPenjualan.Rows[i]["Item"].ToString() == "Sprite")
+                {
+                    quantitySprite = int.Parse(dtPenjualan.Rows[i]["Quantity"].ToString());
+                    if (quantitySprite == 1)
+                    {
+                        DataRow dr = dtPenjualan.Rows[i];
+                        if (dr["Item"].ToString() == "Sprite")
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    else
+                    {
+                        dtPenjualan.Rows[i]["Quantity"] = quantitySprite - 1;
+                    }
+                }
+            }
+        }
+
+        private void btnVoid_Click(object sender, EventArgs e)
+        {
+            dtPenjualan.Rows.Clear();
+        }
     }
 }
