@@ -50,13 +50,16 @@ namespace Kasir_Hari_Hari_Suki
 
         private void dgvHTransaksi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow rowTerpilih = this.dgvHTransaksi.SelectedRows[0];
-            DataTable dtDTransaksi = new DataTable();
-            sqlQuery = "select m.NAMA_MENU, dt.JUMLAH, dt.HARGA_MENU, dt.SUBTOTAL from D_TRANSAKSI dt, MENU m where dt.ID_TRANSAKSI='" + rowTerpilih.Cells["ID_TRANSAKSI"].Value.ToString() + "' and m.ID_MENU = dt.ID_MENU;";
-            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-            sqlAdapter = new MySqlDataAdapter(sqlCommand);
-            sqlAdapter.Fill(dtDTransaksi);
-            dgvDTransaksi.DataSource = dtDTransaksi;
+            if(dgvHTransaksi.SelectedRows.Count > 0)
+            {
+                DataGridViewRow rowTerpilih = this.dgvHTransaksi.SelectedRows[0];
+                DataTable dtDTransaksi = new DataTable();
+                sqlQuery = "select m.NAMA_MENU, dt.JUMLAH, dt.HARGA_MENU, dt.SUBTOTAL from D_TRANSAKSI dt, MENU m where dt.ID_TRANSAKSI='" + rowTerpilih.Cells["ID_TRANSAKSI"].Value.ToString() + "' and m.ID_MENU = dt.ID_MENU;";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtDTransaksi);
+                dgvDTransaksi.DataSource = dtDTransaksi;
+            }
         }
     }
 }
