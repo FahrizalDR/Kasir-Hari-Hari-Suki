@@ -62,6 +62,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnBack
             // 
@@ -83,6 +84,7 @@ namespace Kasir_Hari_Hari_Suki
             this.dgvHTransaksi.Name = "dgvHTransaksi";
             this.dgvHTransaksi.Size = new System.Drawing.Size(437, 427);
             this.dgvHTransaksi.TabIndex = 3;
+            this.dgvHTransaksi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHTransaksi_CellClick);
             // 
             // dgvDTransaksi
             // 
@@ -107,6 +109,15 @@ namespace Kasir_Hari_Hari_Suki
             // 
             this.cBoxTable.BackColor = System.Drawing.Color.White;
             this.cBoxTable.FormattingEnabled = true;
+            this.cBoxTable.Items.AddRange(new object[] {
+            "Table 1",
+            "Table 2",
+            "Table 3",
+            "Table 4",
+            "Table 5",
+            "Table 6",
+            "Table 7",
+            "Table 8"});
             this.cBoxTable.Location = new System.Drawing.Point(457, 25);
             this.cBoxTable.Name = "cBoxTable";
             this.cBoxTable.Size = new System.Drawing.Size(245, 21);
@@ -120,7 +131,6 @@ namespace Kasir_Hari_Hari_Suki
             this.labelTgl.Size = new System.Drawing.Size(52, 13);
             this.labelTgl.TabIndex = 15;
             this.labelTgl.Text = "Tanggal :";
-            this.labelTgl.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelTable
             // 
