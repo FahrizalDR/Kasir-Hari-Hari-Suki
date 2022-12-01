@@ -38,10 +38,17 @@ namespace Kasir_Hari_Hari_Suki
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtStaff);
 
+            DataTable dtIdStaff = new DataTable();
+            sqlQuery = "select ID_STAFF from STAFF where NAMA_STAFF = '" + textBoxUsername.Text + "' and PASS_STAFF = '" + textBoxPassword.Text + "';";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtIdStaff);
+
             if (dtStaff.Rows.Count > 0)
             {
                 this.Hide();
                 FormKasir formKasir = new FormKasir();
+                formKasir.idStaff = dtIdStaff.Rows[0][0].ToString();
                 formKasir.Show();
             }
             else if (dtStaff.Rows.Count == 0)

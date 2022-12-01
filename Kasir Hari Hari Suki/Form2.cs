@@ -13,6 +13,9 @@ namespace Kasir_Hari_Hari_Suki
 {
     public partial class FormKasir : Form
     {
+
+        public string idStaff { get; set; }
+
         public FormKasir()
         {
             InitializeComponent();
@@ -886,6 +889,98 @@ namespace Kasir_Hari_Hari_Suki
             this.Hide();
             FormRecap formRecap = new FormRecap();
             formRecap.Show();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            string nomorTable = "";
+            string metodeBayar = "";
+            if(cbQris.Checked == true)
+            {
+                metodeBayar = cbQris.Text;
+            }
+            if (cbTunai.Checked == true)
+            {
+                metodeBayar = cbTunai.Text;
+            }
+            if (RBTable1.Checked == true)
+            {
+                nomorTable = RBTable1.Text.Substring(6);
+            }
+            if (RBTable2.Checked == true)
+            {
+                nomorTable = RBTable2.Text.Substring(6);
+            }
+            if (RBTable3.Checked == true)
+            {
+                nomorTable = RBTable3.Text.Substring(6);
+            }
+            if (RBTable4.Checked == true)
+            {
+                nomorTable = RBTable4.Text.Substring(6);
+            }
+            if (RBTable5.Checked == true)
+            {
+                nomorTable = RBTable5.Text.Substring(6);
+            }
+            if (RBTable6.Checked == true)
+            {
+                nomorTable = RBTable6.Text.Substring(6);
+            }
+            if (RBTable7.Checked == true)
+            {
+                nomorTable = RBTable7.Text.Substring(6);
+            }
+            if (RBTable8.Checked == true)
+            {
+                nomorTable = RBTable8.Text.Substring(6);
+            }
+            if (dtPenjualan.Rows.Count == 0)
+            {
+                string message = "Input salah! \n Tidak ada input pembelian menu!";
+                string title = "Error";
+                MessageBox.Show(message, title);
+            }
+            else if (dtPenjualan.Rows.Count > 0)
+            {
+                if (metodeBayar == "" && nomorTable != "")
+                {
+                    string message1 = "Input salah! \n Tidak ada input metode pembayaran!";
+                    string title1 = "Error";
+                    MessageBox.Show(message1, title1);
+                }
+                else if (metodeBayar != "" && nomorTable == "")
+                {
+                    string message1 = "Input salah! \n Tidak ada input nomor table!";
+                    string title1 = "Error";
+                    MessageBox.Show(message1, title1);
+                }
+                else if(metodeBayar == "" && nomorTable == "")
+                {
+                    string message1 = "Input salah! \n Tidak ada input nomor table dan metode pembayaran!";
+                    string title1 = "Error";
+                    MessageBox.Show(message1, title1);
+                }
+                else
+                {
+                    sqlQuery = "insert into H_TRANSAKSI values('T','" + idStaff + "',curdate()," + nomorTable + ", 0, 0, '" + metodeBayar + "', 'F');";
+                    sqlConnect.Open();
+                    sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                    sqlCommand.ExecuteNonQuery();
+                    sqlConnect.Close();
+                    for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+                    {
+                        sqlQuery = "insert into D_TRANSAKSI values((select ID_TRANSAKSI from H_TRANSAKSI order by 1 desc limit 1), (select ID_MENU from MENU where NAMA_MENU = '" + dtPenjualan.Rows[i]["Item"].ToString() + "'), " + dtPenjualan.Rows[i]["Quantity"].ToString() + ", " + dtPenjualan.Rows[i]["Harga"].ToString() + ", 0, 'F');";
+                        sqlConnect.Open();
+                        sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                        sqlCommand.ExecuteNonQuery();
+                        sqlConnect.Close();
+                    }
+                    string message = "Pembelian Telah Terkonfirmasi";
+                    string title = "Konfirmasi";
+                    MessageBox.Show(message, title);
+                }
+            }
         }
     }
 }

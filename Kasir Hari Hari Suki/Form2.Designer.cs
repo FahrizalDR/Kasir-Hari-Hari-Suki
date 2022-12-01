@@ -564,6 +564,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnPrint.TabIndex = 34;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnBack
             // 
