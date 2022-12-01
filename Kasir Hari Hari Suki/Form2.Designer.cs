@@ -540,6 +540,7 @@ namespace Kasir_Hari_Hari_Suki
             this.brnRecap.TabIndex = 32;
             this.brnRecap.Text = "Recap";
             this.brnRecap.UseVisualStyleBackColor = false;
+            this.brnRecap.Click += new System.EventHandler(this.brnRecap_Click);
             // 
             // btnVoid
             // 

@@ -880,5 +880,12 @@ namespace Kasir_Hari_Hari_Suki
         {
             dtPenjualan.Rows.Clear();
         }
+
+        private void brnRecap_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormRecap formRecap = new FormRecap();
+            formRecap.Show();
+        }
     }
 }
