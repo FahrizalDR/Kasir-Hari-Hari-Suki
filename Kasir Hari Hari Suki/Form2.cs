@@ -963,14 +963,23 @@ namespace Kasir_Hari_Hari_Suki
                 }
                 else
                 {
+                    string idTransaksi = "";
                     sqlQuery = "insert into H_TRANSAKSI values('T','" + idStaff + "',curdate()," + nomorTable + ", 0, 0, '" + metodeBayar + "', 'F');";
                     sqlConnect.Open();
                     sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                     sqlCommand.ExecuteNonQuery();
                     sqlConnect.Close();
+
+                    DataTable dtIdTransaksi = new DataTable();
+                    sqlQuery = "select ID_TRANSAKSI from H_TRANSAKSI order by 1 desc limit 1;";
+                    sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                    sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                    sqlAdapter.Fill(dtIdTransaksi);
+                    idTransaksi = dtIdTransaksi.Rows[0][0].ToString();
+
                     for (int i = 0; i < dtPenjualan.Rows.Count; i++)
                     {
-                        sqlQuery = "insert into D_TRANSAKSI values((select ID_TRANSAKSI from H_TRANSAKSI order by 1 desc limit 1), (select ID_MENU from MENU where NAMA_MENU = '" + dtPenjualan.Rows[i]["Item"].ToString() + "'), " + dtPenjualan.Rows[i]["Quantity"].ToString() + ", " + dtPenjualan.Rows[i]["Harga"].ToString() + ", 0, 'F');";
+                        sqlQuery = "insert into D_TRANSAKSI values('"+idTransaksi+"', (select ID_MENU from MENU where NAMA_MENU = '" + dtPenjualan.Rows[i]["Item"].ToString() + "'), " + dtPenjualan.Rows[i]["Quantity"].ToString() + ", " + dtPenjualan.Rows[i]["Harga"].ToString() + ", 0, 'F');";
                         sqlConnect.Open();
                         sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                         sqlCommand.ExecuteNonQuery();
