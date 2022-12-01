@@ -82,7 +82,7 @@ namespace Kasir_Hari_Hari_Suki
             this.dgvHTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHTransaksi.Location = new System.Drawing.Point(23, 65);
             this.dgvHTransaksi.Name = "dgvHTransaksi";
-            this.dgvHTransaksi.Size = new System.Drawing.Size(437, 427);
+            this.dgvHTransaksi.Size = new System.Drawing.Size(437, 470);
             this.dgvHTransaksi.TabIndex = 3;
             this.dgvHTransaksi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHTransaksi_CellClick);
             // 
@@ -92,15 +92,15 @@ namespace Kasir_Hari_Hari_Suki
             this.dgvDTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDTransaksi.Location = new System.Drawing.Point(483, 65);
             this.dgvDTransaksi.Name = "dgvDTransaksi";
-            this.dgvDTransaksi.Size = new System.Drawing.Size(442, 470);
+            this.dgvDTransaksi.Size = new System.Drawing.Size(442, 424);
             this.dgvDTransaksi.TabIndex = 4;
             // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.Yellow;
-            this.btnEdit.Location = new System.Drawing.Point(264, 501);
+            this.btnEdit.Location = new System.Drawing.Point(483, 495);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(196, 34);
+            this.btnEdit.Size = new System.Drawing.Size(246, 40);
             this.btnEdit.TabIndex = 13;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
