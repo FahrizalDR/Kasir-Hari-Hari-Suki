@@ -40,6 +40,7 @@ namespace Kasir_Hari_Hari_Suki
             this.labelTable = new System.Windows.Forms.Label();
             this.tbUbah = new System.Windows.Forms.TextBox();
             this.labelUbah = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHTransaksi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDTransaksi)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +104,7 @@ namespace Kasir_Hari_Hari_Suki
             this.btnEdit.BackColor = System.Drawing.Color.Yellow;
             this.btnEdit.Location = new System.Drawing.Point(667, 519);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(258, 20);
+            this.btnEdit.Size = new System.Drawing.Size(124, 20);
             this.btnEdit.TabIndex = 13;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -165,12 +166,25 @@ namespace Kasir_Hari_Hari_Suki
             this.labelUbah.TabIndex = 18;
             this.labelUbah.Text = "Ubah :";
             // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAdd.Location = new System.Drawing.Point(801, 518);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(124, 20);
+            this.btnAdd.TabIndex = 19;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // FormRecap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(946, 547);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.labelUbah);
             this.Controls.Add(this.tbUbah);
             this.Controls.Add(this.labelTable);
@@ -205,5 +219,6 @@ namespace Kasir_Hari_Hari_Suki
         private System.Windows.Forms.Label labelTable;
         private System.Windows.Forms.TextBox tbUbah;
         private System.Windows.Forms.Label labelUbah;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

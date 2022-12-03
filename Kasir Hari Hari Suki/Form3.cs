@@ -114,5 +114,14 @@ namespace Kasir_Hari_Hari_Suki
         {
             e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (dgvHTransaksi.SelectedRows.Count > 0)
+            {
+                FormEdit formEdit = new FormEdit();
+                formEdit.Show();
+            }
+        }
     }
 }
