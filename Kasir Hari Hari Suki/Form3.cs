@@ -39,6 +39,8 @@ namespace Kasir_Hari_Hari_Suki
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            dgvHTransaksi.DataSource = null;
+            dgvDTransaksi.DataSource = null;
             DataTable dtHTransaksi = new DataTable();
             sqlQuery = "select ID_TRANSAKSI, TOTAL_TRANSAKSI, PAJAK_TRANSAKSI, METODE_BAYAR from H_TRANSAKSI where TGL_TRANSAKSI = '"+dtpTglTransaksi.Value.ToString("yyyy-MM-dd")+"' and NO_MEJA = '"+cBoxTable.Text.Substring(6)+"';";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
@@ -60,6 +62,57 @@ namespace Kasir_Hari_Hari_Suki
                 sqlAdapter.Fill(dtDTransaksi);
                 dgvDTransaksi.DataSource = dtDTransaksi;
             }
+        }
+
+        private void dgvDTransaksi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDTransaksi.SelectedRows.Count > 0)
+            {
+                DataGridViewRow rowTerpilih = this.dgvDTransaksi.SelectedRows[0];
+                tbUbah.Text = rowTerpilih.Cells["JUMLAH"].Value.ToString();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow rowTerpilih1 = this.dgvHTransaksi.SelectedRows[0];
+            DataGridViewRow rowTerpilih = this.dgvDTransaksi.SelectedRows[0];
+            DataTable dtIdMenu = new DataTable();
+            sqlQuery = "select ID_MENU from MENU where NAMA_MENU = '"+ rowTerpilih.Cells["NAMA_MENU"].Value.ToString() + "'";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtIdMenu);
+            string idMenu = dtIdMenu.Rows[0][0].ToString();
+            if (tbUbah.Text == "0")
+            {
+                sqlQuery = "delete from D_TRANSAKSI where ID_TRANSAKSI = '" + rowTerpilih1.Cells["ID_TRANSAKSI"].Value.ToString() + "' and ID_MENU = '" +idMenu+ "';";
+                sqlConnect.Open();
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnect.Close();
+                string message1 = "Penghapusan Menu Sudah Berhasil!";
+                string title1 = "Success";
+                MessageBox.Show(message1, title1);
+            }
+            else
+            {
+                sqlQuery = "update D_TRANSAKSI set JUMLAH = "+ tbUbah.Text +" where ID_TRANSAKSI = '"+ rowTerpilih1.Cells["ID_TRANSAKSI"].Value.ToString() + "' and ID_MENU = '"+idMenu+"';";
+                sqlConnect.Open();
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnect.Close();
+                string message1 = "Pengeditan Menu Sudah Berhasil!";
+                string title1 = "Success";
+                MessageBox.Show(message1, title1);
+            }
+            dgvHTransaksi.DataSource = null;
+            dgvDTransaksi.DataSource = null;
+            tbUbah.Text = "";
+        }
+
+        private void tbUbah_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back;
         }
     }
 }

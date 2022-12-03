@@ -38,6 +38,8 @@ namespace Kasir_Hari_Hari_Suki
             this.cBoxTable = new System.Windows.Forms.ComboBox();
             this.labelTgl = new System.Windows.Forms.Label();
             this.labelTable = new System.Windows.Forms.Label();
+            this.tbUbah = new System.Windows.Forms.TextBox();
+            this.labelUbah = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHTransaksi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDTransaksi)).BeginInit();
             this.SuspendLayout();
@@ -92,18 +94,20 @@ namespace Kasir_Hari_Hari_Suki
             this.dgvDTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDTransaksi.Location = new System.Drawing.Point(483, 65);
             this.dgvDTransaksi.Name = "dgvDTransaksi";
-            this.dgvDTransaksi.Size = new System.Drawing.Size(442, 424);
+            this.dgvDTransaksi.Size = new System.Drawing.Size(442, 444);
             this.dgvDTransaksi.TabIndex = 4;
+            this.dgvDTransaksi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDTransaksi_CellClick);
             // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.Yellow;
-            this.btnEdit.Location = new System.Drawing.Point(483, 495);
+            this.btnEdit.Location = new System.Drawing.Point(667, 519);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(246, 40);
+            this.btnEdit.Size = new System.Drawing.Size(258, 20);
             this.btnEdit.TabIndex = 13;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // cBoxTable
             // 
@@ -126,20 +130,40 @@ namespace Kasir_Hari_Hari_Suki
             // labelTgl
             // 
             this.labelTgl.AutoSize = true;
+            this.labelTgl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTgl.Location = new System.Drawing.Point(45, 27);
             this.labelTgl.Name = "labelTgl";
-            this.labelTgl.Size = new System.Drawing.Size(52, 13);
+            this.labelTgl.Size = new System.Drawing.Size(61, 13);
             this.labelTgl.TabIndex = 15;
             this.labelTgl.Text = "Tanggal :";
             // 
             // labelTable
             // 
             this.labelTable.AutoSize = true;
+            this.labelTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTable.Location = new System.Drawing.Point(381, 28);
             this.labelTable.Name = "labelTable";
-            this.labelTable.Size = new System.Drawing.Size(40, 13);
+            this.labelTable.Size = new System.Drawing.Size(47, 13);
             this.labelTable.TabIndex = 16;
             this.labelTable.Text = "Table :";
+            // 
+            // tbUbah
+            // 
+            this.tbUbah.Location = new System.Drawing.Point(536, 519);
+            this.tbUbah.Name = "tbUbah";
+            this.tbUbah.Size = new System.Drawing.Size(118, 20);
+            this.tbUbah.TabIndex = 17;
+            this.tbUbah.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUbah_KeyPress);
+            // 
+            // labelUbah
+            // 
+            this.labelUbah.AutoSize = true;
+            this.labelUbah.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUbah.Location = new System.Drawing.Point(483, 521);
+            this.labelUbah.Name = "labelUbah";
+            this.labelUbah.Size = new System.Drawing.Size(49, 15);
+            this.labelUbah.TabIndex = 18;
+            this.labelUbah.Text = "Ubah :";
             // 
             // FormRecap
             // 
@@ -147,6 +171,8 @@ namespace Kasir_Hari_Hari_Suki
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(946, 547);
+            this.Controls.Add(this.labelUbah);
+            this.Controls.Add(this.tbUbah);
             this.Controls.Add(this.labelTable);
             this.Controls.Add(this.labelTgl);
             this.Controls.Add(this.cBoxTable);
@@ -177,5 +203,7 @@ namespace Kasir_Hari_Hari_Suki
         private System.Windows.Forms.ComboBox cBoxTable;
         private System.Windows.Forms.Label labelTgl;
         private System.Windows.Forms.Label labelTable;
+        private System.Windows.Forms.TextBox tbUbah;
+        private System.Windows.Forms.Label labelUbah;
     }
 }
