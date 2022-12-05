@@ -119,7 +119,9 @@ namespace Kasir_Hari_Hari_Suki
         {
             if (dgvHTransaksi.SelectedRows.Count > 0)
             {
+                DataGridViewRow rowTerpilih1 = this.dgvHTransaksi.SelectedRows[0];
                 FormEdit formEdit = new FormEdit();
+                formEdit.idTransaksi = rowTerpilih1.Cells["ID_TRANSAKSI"].Value.ToString();
                 formEdit.Show();
             }
         }

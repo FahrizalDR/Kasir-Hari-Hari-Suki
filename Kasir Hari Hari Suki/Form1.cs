@@ -62,12 +62,18 @@ namespace Kasir_Hari_Hari_Suki
 
         private void textBoxUsername_Click(object sender, EventArgs e)
         {
-            textBoxUsername.Text = "";
+            if (textBoxUsername.Text == "Username")
+            {
+                textBoxUsername.Text = "";
+            }
         }
 
         private void textBoxPassword_Click(object sender, EventArgs e)
         {
-            textBoxPassword.Text = "";
+            if (textBoxPassword.Text == "Password")
+            {
+                textBoxPassword.Text = "";
+            }
         }
 
         private void textBoxPassword_TextChanged(object sender, EventArgs e)
