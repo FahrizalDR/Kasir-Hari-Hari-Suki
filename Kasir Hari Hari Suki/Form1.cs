@@ -44,7 +44,13 @@ namespace Kasir_Hari_Hari_Suki
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtIdStaff);
 
-            if (dtStaff.Rows.Count > 0)
+            if (textBoxUsername.Text == "owner" && textBoxPassword.Text == "owner123")
+            {
+                this.Hide();
+                FormOwner formOwner = new FormOwner();
+                formOwner.Show();
+            }
+            else if (dtStaff.Rows.Count > 0)
             {
                 this.Hide();
                 FormKasir formKasir = new FormKasir();
