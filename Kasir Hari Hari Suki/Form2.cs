@@ -15,6 +15,7 @@ namespace Kasir_Hari_Hari_Suki
     {
 
         public string idStaff { get; set; }
+        public string NamaStaff { get; set; }
 
         public FormKasir()
         {
@@ -985,11 +986,50 @@ namespace Kasir_Hari_Hari_Suki
                         sqlCommand.ExecuteNonQuery();
                         sqlConnect.Close();
                     }
+                    PrintDialog printdialog1 = new PrintDialog();
+                    printdialog1.Document = printDocument1;
+
+                    DialogResult result = printdialog1.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        printPreviewDialog1.Document = printDocument1;
+                        printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 285, 600);
+                        printPreviewDialog1.ShowDialog();
+                    }
+
                     string message = "Pembelian Telah Terkonfirmasi";
                     string title = "Konfirmasi";
                     MessageBox.Show(message, title);
                 }
             }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            string idTransaksi = "";
+            DataTable dtIdTransaksi = new DataTable();
+            sqlQuery = "select ID_TRANSAKSI from H_TRANSAKSI order by 1 desc limit 1;";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtIdTransaksi);
+            idTransaksi = dtIdTransaksi.Rows[0][0].ToString();
+
+            e.Graphics.DrawString("HariHariSuki", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(85, 10));
+            e.Graphics.DrawString("Sale Recipt", new Font("Arial", 11, FontStyle.Bold), Brushes.Black, new Point(100, 40));
+
+            e.Graphics.DrawString("_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________", new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new Point(0, 100));
+            e.Graphics.DrawString("Order : " + idTransaksi.Substring(9), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(15, 140));
+            e.Graphics.DrawString(DateTime.Now.ToShortDateString(), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(200, 140));
+            e.Graphics.DrawString("Cashier : " + NamaStaff, new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(15, 160));
+            e.Graphics.DrawString(DateTime.Now.ToString("hh:mm:ss"), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(213, 160));
+
+            e.Graphics.DrawString("---------------------------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(0, 180));
+            e.Graphics.DrawString("Item Name", new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(15, 200));
+            e.Graphics.DrawString("Price", new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(170, 200));
+            e.Graphics.DrawString("Subtotal", new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(220, 200));
+            e.Graphics.DrawString("---------------------------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(0, 220));
+
         }
     }
 }

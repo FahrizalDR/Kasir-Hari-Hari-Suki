@@ -55,6 +55,7 @@ namespace Kasir_Hari_Hari_Suki
                 this.Hide();
                 FormKasir formKasir = new FormKasir();
                 formKasir.idStaff = dtIdStaff.Rows[0][0].ToString();
+                formKasir.NamaStaff = dtStaff.Rows[0][0].ToString();
                 formKasir.Show();
             }
             else if (dtStaff.Rows.Count == 0)
