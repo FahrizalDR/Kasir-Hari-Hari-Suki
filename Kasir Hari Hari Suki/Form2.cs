@@ -96,7 +96,7 @@ namespace Kasir_Hari_Hari_Suki
                 dtRow["Harga"] = 5000;
                 dtRow["Quantity"] = 1;
                 dtPenjualan.Rows.Add(dtRow);
-                quantitySuki++;
+                quantityTomYum++;
             }
             else if (dtPenjualan.Rows.Count > 0)
             {
@@ -118,7 +118,7 @@ namespace Kasir_Hari_Hari_Suki
                         dtRow["Harga"] = 5000;
                         dtRow["Quantity"] = 1;
                         dtPenjualan.Rows.Add(dtRow);
-                        quantitySuki++;
+                        quantityTomYum++;
                     }
                 }
             }
@@ -1015,20 +1015,70 @@ namespace Kasir_Hari_Hari_Suki
             sqlAdapter.Fill(dtIdTransaksi);
             idTransaksi = dtIdTransaksi.Rows[0][0].ToString();
 
-            e.Graphics.DrawString("HariHariSuki", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(85, 10));
+            DataTable dtDTrans = new DataTable();
+            sqlQuery = "select concat('Rp ', format(d.SUBTOTAL,0,'id_ID')), concat('Rp ', format(d.HARGA_MENU,0,'id_ID')), m.NAMA_MENU, d.JUMLAH  from D_TRANSAKSI d, MENU m where d.ID_TRANSAKSI = '"+idTransaksi+"' and m.ID_MENU = d.ID_MENU;";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtDTrans);
+
+            DataTable dtHTrans = new DataTable();
+            sqlQuery = "select NO_MEJA, METODE_BAYAR, concat('Rp ', format(TOTAL_TRANSAKSI - PAJAK_TRANSAKSI,0,'id_ID')), concat('Rp ', format(TOTAL_TRANSAKSI,0,'id_ID')), concat('Rp ', format(PAJAK_TRANSAKSI,0,'id_ID')) from H_TRANSAKSI where ID_TRANSAKSI = '" + idTransaksi+"';";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtHTrans);
+
+            e.Graphics.DrawString("HARIHARISUKI", new Font("Arial", 14, FontStyle.Bold), Brushes.Black, new Point(75, 10));
             e.Graphics.DrawString("Sale Recipt", new Font("Arial", 11, FontStyle.Bold), Brushes.Black, new Point(100, 40));
 
             e.Graphics.DrawString("_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________", new Font("Arial", 16, FontStyle.Bold), Brushes.Black, new Point(0, 100));
-            e.Graphics.DrawString("Order : " + idTransaksi.Substring(9), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(15, 140));
+            e.Graphics.DrawString("Order    : " + idTransaksi.Substring(9), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(15, 140));
             e.Graphics.DrawString(DateTime.Now.ToShortDateString(), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(200, 140));
             e.Graphics.DrawString("Cashier : " + NamaStaff, new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(15, 160));
             e.Graphics.DrawString(DateTime.Now.ToString("hh:mm:ss"), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(213, 160));
+            e.Graphics.DrawString("Table    : " + dtHTrans.Rows[0][0].ToString(), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(15, 180));
 
-            e.Graphics.DrawString("---------------------------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(0, 180));
-            e.Graphics.DrawString("Item Name", new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(15, 200));
-            e.Graphics.DrawString("Price", new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(170, 200));
-            e.Graphics.DrawString("Subtotal", new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(220, 200));
-            e.Graphics.DrawString("---------------------------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(0, 220));
+            e.Graphics.DrawString("---------------------------------------------------------", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(10, 200));
+            e.Graphics.DrawString("Item Name", new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(15, 220));
+            e.Graphics.DrawString("Price", new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(170, 220));
+            e.Graphics.DrawString("Subtotal", new Font("Arial", 8, FontStyle.Regular), Brushes.Black, new Point(220, 220));
+            e.Graphics.DrawString("---------------------------------------------------------", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(10, 240));
+
+            int baris = 260;
+            for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+            {
+                e.Graphics.DrawString(dtDTrans.Rows[i][2].ToString(), new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(15, baris));
+                e.Graphics.DrawString(dtDTrans.Rows[i][1].ToString(), new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(170, baris));
+                baris = baris + 10;
+                e.Graphics.DrawString(dtDTrans.Rows[i][3].ToString() + "x", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(25, baris));
+                e.Graphics.DrawString(dtDTrans.Rows[i][0].ToString(), new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(220, baris));
+                baris = baris + 20;
+            }
+            e.Graphics.DrawString("---------------------------------------------------------", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(10, baris));
+            baris += 20;
+
+            e.Graphics.DrawString("Total Amount : ", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(150, baris));
+            e.Graphics.DrawString(dtHTrans.Rows[0][2].ToString(), new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(220, baris));
+            baris += 20;
+            e.Graphics.DrawString("Tax (10%)     : ", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(150, baris));
+            e.Graphics.DrawString(dtHTrans.Rows[0][4].ToString(), new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(220, baris));
+            baris += 10;
+            e.Graphics.DrawString("-----------------------------", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(145, baris));
+            baris += 20;
+            e.Graphics.DrawString("Total to Pay  : ", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(150, baris));
+            e.Graphics.DrawString(dtHTrans.Rows[0][3].ToString(), new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(220, baris));
+            baris += 20;
+            e.Graphics.DrawString("Pay Method   : ", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(150, baris));
+            e.Graphics.DrawString(dtHTrans.Rows[0][1].ToString(), new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(220, baris));
+            baris += 10;
+            e.Graphics.DrawString("-----------------------------", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new Point(145, baris));
+            baris += 20;
+            e.Graphics.DrawString("Received     : ", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(150, baris));
+            e.Graphics.DrawString(dtHTrans.Rows[0][3].ToString(), new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(220, baris));
+            baris += 20;
+            e.Graphics.DrawString("Change       : ", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(150, baris));
+            e.Graphics.DrawString("Rp  0", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(220, baris));
+            baris += 40;
+            e.Graphics.DrawString("THANKYOU FOR PURCHASING!", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, new Point(60, baris));
 
         }
     }
