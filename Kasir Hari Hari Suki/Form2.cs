@@ -892,6 +892,7 @@ namespace Kasir_Hari_Hari_Suki
             formRecap.Show();
         }
 
+
         private void btnPrint_Click(object sender, EventArgs e)
         {
             string nomorTable = "";
@@ -993,8 +994,13 @@ namespace Kasir_Hari_Hari_Suki
 
                     if (result == DialogResult.OK)
                     {
+                        int tambahanBaris = 0;
+                        for (int i = 0; i < dtPenjualan.Rows.Count; i++)
+                        {
+                            tambahanBaris += 30;
+                        }
                         printPreviewDialog1.Document = printDocument1;
-                        printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 285, 600);
+                        printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pprnm", 285, 500 + tambahanBaris);
                         printPreviewDialog1.ShowDialog();
                     }
 
@@ -1079,7 +1085,7 @@ namespace Kasir_Hari_Hari_Suki
             e.Graphics.DrawString("Rp  0", new Font("Arial", 6, FontStyle.Regular), Brushes.Black, new Point(220, baris));
             baris += 40;
             e.Graphics.DrawString("THANKYOU FOR PURCHASING!", new Font("Arial", 8, FontStyle.Bold), Brushes.Black, new Point(60, baris));
-
+            baris += 20;
         }
     }
 }
