@@ -162,7 +162,7 @@ namespace Kasir_Hari_Hari_Suki
             this.labelLaporan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLaporan.Location = new System.Drawing.Point(33, 179);
             this.labelLaporan.Name = "labelLaporan";
-            this.labelLaporan.Size = new System.Drawing.Size(227, 16);
+            this.labelLaporan.Size = new System.Drawing.Size(222, 16);
             this.labelLaporan.TabIndex = 32;
             this.labelLaporan.Text = "Laporan penjualan menu pada ";
             // 
@@ -190,7 +190,7 @@ namespace Kasir_Hari_Hari_Suki
             this.labelMenuLaris.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMenuLaris.Location = new System.Drawing.Point(452, 204);
             this.labelMenuLaris.Name = "labelMenuLaris";
-            this.labelMenuLaris.Size = new System.Drawing.Size(136, 16);
+            this.labelMenuLaris.Size = new System.Drawing.Size(131, 16);
             this.labelMenuLaris.TabIndex = 35;
             this.labelMenuLaris.Text = "Menu Paling Laris";
             // 
@@ -200,7 +200,7 @@ namespace Kasir_Hari_Hari_Suki
             this.labelInfoHarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInfoHarga.Location = new System.Drawing.Point(452, 316);
             this.labelInfoHarga.Name = "labelInfoHarga";
-            this.labelInfoHarga.Size = new System.Drawing.Size(164, 16);
+            this.labelInfoHarga.Size = new System.Drawing.Size(159, 16);
             this.labelInfoHarga.TabIndex = 36;
             this.labelInfoHarga.Text = "Info Perubahan Harga";
             this.labelInfoHarga.Click += new System.EventHandler(this.label1_Click);
@@ -228,6 +228,7 @@ namespace Kasir_Hari_Hari_Suki
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSearch);
             this.Name = "FormOwner";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Recap";
             this.Load += new System.EventHandler(this.FormOwner_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecap)).EndInit();

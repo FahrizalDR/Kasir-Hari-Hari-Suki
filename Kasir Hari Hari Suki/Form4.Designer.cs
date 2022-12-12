@@ -140,6 +140,7 @@ namespace Kasir_Hari_Hari_Suki
             this.Controls.Add(this.labelNama);
             this.Controls.Add(this.labelEdit);
             this.Name = "FormEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Edit Penjualan";
             this.Load += new System.EventHandler(this.FormEdit_Load);
             this.ResumeLayout(false);

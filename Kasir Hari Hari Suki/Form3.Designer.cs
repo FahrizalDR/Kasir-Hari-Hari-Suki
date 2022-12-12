@@ -197,6 +197,7 @@ namespace Kasir_Hari_Hari_Suki
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.dtpTglTransaksi);
             this.Name = "FormRecap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Recap";
             this.Load += new System.EventHandler(this.FormRecap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHTransaksi)).EndInit();
